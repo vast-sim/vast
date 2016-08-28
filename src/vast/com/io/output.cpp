@@ -10,7 +10,7 @@ namespace Vast
 		{
 			void output(const char* msg, enum OutMode mode)
 			{
-				if (mode == OutMode::DEBUG && !VAST_DEBUG_ENABLED)
+				if (mode == OutMode::DEBUG && !glob_debug_enabled)
 					return;
 
 				switch(mode)

@@ -1,6 +1,20 @@
-//CMake handles this
-#define VAST_VERSION_MAJOR @APPLICATION_VERSION_MAJOR@
-#define VAST_VERSION_MINOR @APPLICATION_VERSION_MINOR@
-#define VAST_VERSION_BUILD @APPLICATION_VERSION_BUILD@
+#ifndef VAST_CONFIG
+#define VAST_CONFIG
 
-#define VAST_DEBUG_ENABLED @APPLICATION_DEBUG_ENABLED@
+#include "vast/com/atomic/type.h"
+
+namespace Vast
+{
+	// CMake handles the configuring of much of this file
+
+	const i32 glob_version_major = @APPLICATION_VERSION_MAJOR@;
+	const i32 glob_version_minor = @APPLICATION_VERSION_MINOR@;
+	const i32 glob_version_build = @APPLICATION_VERSION_BUILD@;
+
+	const bool glob_debug_enabled = @APPLICATION_DEBUG_ENABLED@;
+
+	const char* glob_build_date = __DATE__;
+	const char* glob_build_time = __TIME__;
+}
+
+#endif
